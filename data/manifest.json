@@ -1,0 +1,29 @@
+{
+  "project": "NGIF-FRAUD-001",
+  "sprint": "01",
+  "seed": 42,
+  "parameters": {
+    "n_clients": 3000,
+    "n_restaurants": 120,
+    "target_mean_orders_per_client": 6,
+    "days": 90
+  },
+  "counts": {
+    "clientes.csv": 3000,
+    "domicilios.csv": 1709,
+    "dispositivos.csv": 1709,
+    "restaurantes.csv": 120,
+    "sessoes.csv": 17447,
+    "pedidos.csv": 17447
+  },
+  "sha256": {
+    "clientes.csv": "2745f3abff0d1337f892aa16704652d05ebe887e12b68d25bb7e5e26e9923603",
+    "domicilios.csv": "c0aa9a3eba857a7cdd512b2fdbcca999f05661530e7dae3c15881b95e9bdf21f",
+    "dispositivos.csv": "e242893e544bed24c4a2c54c67b8c4bf0cf777192042d59f28890422d50eb3fc",
+    "restaurantes.csv": "cafbe45bf516ffdda94c966293d17fba854de124a2bfc89f31d2af74e14a73ed",
+    "sessoes.csv": "20ae13edd731aa9cbd15236f83eda30d81cb97dd0c89b4504d32867c565cf681",
+    "pedidos.csv": "4380eb9b6d2e87e5691a0984a61fd1931369b6c325c51355465205ad8b432640"
+  },
+  "ground_truth_available": false,
+  "notes": "All data synthetic; no fraud injected in Sprint 01. Times are UTC."
+}

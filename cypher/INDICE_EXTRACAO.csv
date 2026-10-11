@@ -1,0 +1,82 @@
+﻿numero,paragrafo_inicio,paragrafo_fim,tipo,arquivo,primeira_linha
+1,1312,1312,preformatado,02_importacao.cypher,"# Relações únicas entre clientes e dispositivoscliente_dispositivo = (    sessoes[[""cliente_id"", ""de"
+2,1436,1439,preformatado,05_analise_temporal_ips.cypher,RETURN
+3,1462,1464,preformatado,01_constraints.cypher,CREATE CONSTRAINT cliente_id_unique IF NOT EXISTS
+4,1466,1468,preformatado,01_constraints.cypher,CREATE CONSTRAINT sessao_id_unique IF NOT EXISTS
+5,1470,1472,preformatado,01_constraints.cypher,CREATE CONSTRAINT device_id_unique IF NOT EXISTS
+6,1476,1476,preformatado,01_constraints.cypher,SHOW CONSTRAINTS;
+7,1515,1515,texto normal,03_auditoria_consultas.cypher,"RETURN name, value;"
+8,1523,1526,texto normal,02_importacao.cypher,LOAD CSV WITH HEADERS
+9,1570,1573,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS
+10,1626,1634,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS
+11,1637,1638,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)
+12,1644,1653,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS
+13,1655,1656,preformatado,03_auditoria_consultas.cypher,MATCH (d:Dispositivo)
+14,1660,1670,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS
+15,1672,1673,preformatado,03_auditoria_consultas.cypher,MATCH (s:Sessao)
+16,1704,1715,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS
+17,1723,1734,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS
+18,1738,1739,preformatado,03_auditoria_consultas.cypher,MATCH (:ContaCliente)-[r:INICIOU]->(:Sessao)
+19,1742,1743,preformatado,03_auditoria_consultas.cypher,MATCH (:Sessao)-[r:UTILIZOU]->(:Dispositivo)
+20,1753,1756,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+21,1772,1774,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[r1:INICIOU]->(s:Sessao)-[r2:UTILIZOU]->(d:Dispositivo)
+22,1815,1829,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+23,1838,1846,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+24,1853,1865,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+25,1982,2000,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+26,2034,2044,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+27,2084,2134,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+28,2262,2298,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+29,2335,2349,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+30,2355,2387,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+31,2421,2463,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+32,2541,2558,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+33,2562,2599,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+34,2633,2642,preformatado,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+35,2673,2718,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+36,2764,2764,texto normal,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+37,2777,2777,texto normal,05_analise_temporal_ips.cypher,"UNWIND range(1, size(eventos) - 1) AS i"
+38,2847,2898,preformatado,05_analise_temporal_ips.cypher,MATCH (c:ContaCliente)-[:INICIOU]->(s:Sessao)-[:UTILIZOU]->(d:Dispositivo)
+39,2950,2950,preformatado,04_gds_wcc.cypher,RETURN gds.version() AS versao_gds;
+40,2993,3016,preformatado,04_gds_wcc.cypher,CALL gds.wcc.stream('ngif_identity_graph')
+41,3068,3070,preformatado,01_constraints.cypher,CREATE CONSTRAINT endereco_ip_token_unique IF NOT EXISTS
+42,3072,3077,preformatado,02_importacao.cypher,MATCH (s:Sessao)
+43,3082,3088,preformatado,03_auditoria_consultas.cypher,MATCH (ip:EnderecoIP)
+44,3123,3138,preformatado,04_gds_wcc.cypher,MATCH (source)-[r:INICIOU|UTILIZOU|ORIGINOU_DE]->(target)
+45,3146,3151,preformatado,04_gds_wcc.cypher,CALL gds.wcc.stats('ngif_identity_v2')
+46,3200,3222,preformatado,04_gds_wcc.cypher,CALL gds.wcc.stream('ngif_identity_v2')
+47,3267,3291,preformatado,04_gds_wcc.cypher,MATCH (source)-[r:INICIOU|UTILIZOU|ORIGINOU_DE]->(target)
+48,3295,3300,preformatado,04_gds_wcc.cypher,CALL gds.wcc.stats('ngif_identity_v3')
+49,3341,3358,preformatado,03_auditoria_consultas.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+50,3362,3375,preformatado,03_auditoria_consultas.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+51,3421,3441,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+52,3471,3517,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP {ip_token: 'IP00012'})
+53,3522,3555,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP {ip_token: 'IP00012'})
+54,3598,3668,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+55,3702,3753,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+56,3801,3819,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+57,3841,3856,preformatado,05_analise_temporal_ips.cypher,MATCH (ip:EnderecoIP)<-[:ORIGINOU_DE]-(s:Sessao)
+58,4181,4183,texto normal,01_constraints.cypher,CREATE CONSTRAINT pedido_id_unique IF NOT EXISTS
+59,4185,4187,texto normal,01_constraints.cypher,CREATE CONSTRAINT restaurante_id_unique IF NOT EXISTS
+60,4237,4245,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS FROM 'file:///pedidos.csv' AS row
+61,4256,4257,preformatado,06_analise_transacional.cypher,MATCH (r:Restaurante)
+62,4269,4281,preformatado,02_importacao.cypher,LOAD CSV WITH HEADERS FROM 'file:///pedidos.csv' AS row
+63,4294,4299,preformatado,06_analise_transacional.cypher,MATCH (p:Pedido)
+64,4328,4329,texto normal,06_analise_transacional.cypher,MATCH (p:Pedido)
+65,4333,4333,texto normal,06_analise_transacional.cypher,RETURN count(p) AS pedidos_vinculados;
+66,4344,4345,texto normal,06_analise_transacional.cypher,MATCH (:ContaCliente)-[r:REALIZOU]->(:Pedido)
+67,4369,4370,texto normal,06_analise_transacional.cypher,MATCH (p:Pedido)
+68,4377,4378,texto normal,06_analise_transacional.cypher,MATCH (:Sessao)-[r:GEROU]->(:Pedido)
+69,4384,4387,texto normal,06_analise_transacional.cypher,MATCH (p:Pedido)
+70,4394,4395,texto normal,06_analise_transacional.cypher,MATCH (:Pedido)-[r:DESTINADO_A]->(:Restaurante)
+71,4417,4420,preformatado,03_auditoria_consultas.cypher,MATCH ()-[r]->()
+72,4426,4431,preformatado,02_importacao.cypher,MATCH (p:Pedido)
+73,4468,4479,preformatado,06_analise_transacional.cypher,MATCH (c:ContaCliente)-[:REALIZOU]->(p:Pedido)
+74,4501,4523,preformatado,03_auditoria_consultas.cypher,MATCH (c1:ContaCliente)-[:INICIOU]->(:Sessao)
+75,4528,4553,preformatado,06_analise_transacional.cypher,MATCH (c1:ContaCliente)-[:INICIOU]->(:Sessao)
+76,4623,4624,texto normal,03_auditoria_consultas.cypher,MATCH (c:ContaCliente)
+77,4626,4627,texto normal,06_analise_transacional.cypher,MATCH (c)-[:REALIZOU]->(:Pedido)
+78,4654,4655,texto normal,06_analise_transacional.cypher,MATCH (c:ContaCliente)-[:REALIZOU]->(p:Pedido)
+79,4703,4746,preformatado,06_analise_transacional.cypher,MATCH (c1:ContaCliente)-[:INICIOU]->(:Sessao)
+80,4791,4822,preformatado,06_analise_transacional.cypher,MATCH (c1:ContaCliente)-[:INICIOU]->(:Sessao)
+81,4930,4940,preformatado,03_auditoria_consultas.cypher,MATCH (c1:ContaCliente)-[:INICIOU]->(:Sessao)

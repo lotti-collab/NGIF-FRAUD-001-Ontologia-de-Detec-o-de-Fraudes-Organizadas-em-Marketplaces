@@ -1,0 +1,24 @@
+﻿# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Credenciais e configuracoes locais
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Arquivos temporarios
+.DS_Store
+Thumbs.db
+*.log
+
+# Pacotes de recuperacao documental
+NGIF_FRAUD_001_Cypher_Recuperado/
+NGIF_FRAUD_001_Cypher_Recuperado.zip
